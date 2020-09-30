@@ -1,6 +1,14 @@
+/**
+ * Type definitions for Nacelle GraphQL Lambdas. These types
+ * are merged with local type definitions in each of the lambdas.
+ *
+ * These definitions are also used to programmatically generate
+ * TypeScript interfaces, which can be found in ./graphql.types.ts
+ */
 export default `#graphql
   scalar JSON
 
+  "A product that has been indexed by Nacelle"
   type NacelleProduct {
     id: ID!
     handle: String!
@@ -25,12 +33,14 @@ export default `#graphql
     indexedAt: Int!
   }
 
+  "The price range and currency of a product"
   type PriceRange {
     min: String
     max: String
     currencyCode: String
   }
 
+  "Details for different media types associated with content & products"
   type Media {
     id: ID
     type: String!
@@ -39,6 +49,7 @@ export default `#graphql
     altText: String
   }
 
+  "A flexible key / value store that can be associated with many other pieces of Nacelle data"
   type Metafield {
     id: ID
     namespace: String
@@ -46,6 +57,7 @@ export default `#graphql
     value: String!
   }
 
+  "A product option that differs from the base product"
   type ProductVariant {
     id: ID!
     title: String
@@ -83,11 +95,13 @@ export default `#graphql
     metafields: [Metafield]
   }
 
+  "Available options for a product variant (i.e. color, size, etc)"
   type SelectedProductOption {
     name: String!
     value: String!
   }
 
+  "A collection of products that has been indexed by Nacelle"
   type NacelleCollection {
     id: ID!
     handle: String!
@@ -105,6 +119,7 @@ export default `#graphql
     metafields: [Metafield!]
   }
 
+  "A list of products by handle"
   type NacelleProductList {
     title: String!
     slug: String!
@@ -112,6 +127,7 @@ export default `#graphql
     handles: [String!]
   }
 
+  "Content from a CMS that has been indexed by Nacelle"
   type NacelleContent {
     id: ID!
     handle: String!
@@ -141,6 +157,7 @@ export default `#graphql
     indexedAt: Int!
   }
 
+  "A list of articles by handle"
   type ContentArticleList {
     title: String!
     slug: String!
@@ -148,6 +165,7 @@ export default `#graphql
     handles: [String!]
   }
 
+  "The author of the content"
   type ContentAuthor {
     firstName: String
     lastName: String
@@ -155,6 +173,7 @@ export default `#graphql
     email: String
   }
 
+  "An article that is related to the current article"
   type ContentRelatedArticle {
     handle: String!
     title: String
@@ -181,6 +200,7 @@ export default `#graphql
     value: String
   }
 
+  "Information about a processed checkout"
   type Checkout {
     id: String!
     url: String
@@ -195,6 +215,7 @@ export default `#graphql
     cartItems: [CartItem!]
   }
 
+  "Information required to process a checkout"
   input CheckoutInput {
     cartItems: [CartItemInput!]!
     checkoutId: String
@@ -211,6 +232,7 @@ export default `#graphql
     metafields: [MetafieldInput!]
   }
 
+  "An item that is currently in a cart"
   type CartItem {
     cartItemId: String!
     variantId: String
@@ -218,6 +240,7 @@ export default `#graphql
     metafields: [Metafield!]
   }
 
+  "A sapce that has been created in the Nacelle dashboard"
   type NacelleSpace {
     id: ID!
     type: String
@@ -238,6 +261,7 @@ export default `#graphql
     featureFlags: [String]
   }
 
+  "Configuration settings for retrieving content from a CMS"
   type ContentDataConfig {
     dataSource: String
     graphqlDataToken: String
@@ -246,18 +270,21 @@ export default `#graphql
     assetStorage: String
   }
 
+  "Configuration settings for retrieving producting information from a PIM"
   type ProductDataConfig {
     dataSource: String
     graphqlDataToken: String
     graphqlEndpoint: String
   }
 
+  "A user who has access to a space"
   type SpaceUser {
     id: ID!
     email: String
     role: String
   }
 
+  "Configuration used to process checkouts"
   type CheckoutDataConfig {
     dataSource: String!
     graphqlDataToken: String
@@ -282,11 +309,13 @@ export default `#graphql
     linklists: [SpaceLinkList!]!
   }
 
+  "A list of links that can be used to generate pages & routes in a headless app"
   type SpaceLinkList {
     handle: String!
     links: [Link!]
   }
 
+  "A link used to generate pages & routes in a headless app"
   type Link {
     title: String!
     to: String!

@@ -9,11 +9,11 @@
     "build"
   ],
   "scripts": {
+    "prepublishOnly": "npm run generate && npm run build",
     "prebuild": "rimraf ./build",
-    "precommit": "lint-staged",
     "build": "rollup -c",
     "test": "jest ./src --watch",
-    "test:ci": "jest ./src --runInBand --coverage",
+    "test:ci": "jest ./src --runInBand --coverage --passWithNoTests",
     "lint": "eslint ./src",
     "generate": "TS_NODE_PROJECT=./tsconfig.dev.json DEBUG=1 graphql-codegen --config codegen.yml"
   },
@@ -38,11 +38,29 @@
     "typescript": "^4.0.3"
   },
   "devDependencies": {
+    "@graphql-codegen/add": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^7.10.0",
     "graphql-tag": "^2.11.0",
     "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.(js|ts|tsx)": [
+      "prettier --write",
+      "npm run lint",
+      "git add"
+    ],
+    "*{json, md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:ci"
+    }
   }
 }

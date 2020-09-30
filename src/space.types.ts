@@ -1,3 +1,8 @@
+/**
+ * Nacelle space as it is retrieved from the database.
+ * The primary difference is that many pieces of information are stored
+ * as JSON strings prior to being parsed in Hail Frequency
+ */
 export interface DatabaseSpace {
   id: string;
   type: string;

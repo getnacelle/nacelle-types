@@ -1,9 +1,13 @@
 overwrite: true
 generates:
   src/graphql.types.ts:
-    schema: './src/type-defs.ts'
+    schema:
+      - './src/type-defs.ts':
+        commentDescriptions: true
     plugins:
       - 'typescript'
+      - add:
+          content: '/* eslint-disable */'
     config:
       maybeValue: T | null | undefined
       skipTypename: true

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export type Maybe<T> = T | null | undefined;
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K];
@@ -12,6 +13,7 @@ export type Scalars = {
   JSON: any;
 };
 
+/** A very sensible description */
 export type NacelleProduct = {
   id: Scalars['ID'];
   handle: Scalars['String'];

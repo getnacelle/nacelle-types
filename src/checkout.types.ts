@@ -1,10 +1,16 @@
 import { Metafield } from './graphql.types';
 
+/**
+ * Information needed to process ReCharge checkouts
+ */
 export interface RechargeCheckout {
   token: string;
   completed_at: string | boolean;
 }
 
+/**
+ * Information needed to process Shopify checkouts
+ */
 export interface ShopifyCheckout {
   id: string;
   webUrl: string;
@@ -13,6 +19,9 @@ export interface ShopifyCheckout {
   customAttributes: Metafield[];
 }
 
+/**
+ * Product line item information for ReCharge checkouts
+ */
 export interface RechargeCheckoutLineItem {
   variant_id: string;
   quantity: number;
@@ -29,6 +38,9 @@ export interface RechargeCheckoutLineItem {
   order_day_of_week?: string;
 }
 
+/**
+ * Product line item information for Shopify checkouts
+ */
 export interface ShopifyCheckoutLineItem {
   variantId: string;
   quantity: number;
