@@ -13,7 +13,7 @@ export type Scalars = {
   JSON: any;
 };
 
-/** A very sensible description */
+/** A product that has been indexed by Nacelle */
 export type NacelleProduct = {
   id: Scalars['ID'];
   handle: Scalars['String'];
@@ -38,12 +38,14 @@ export type NacelleProduct = {
   indexedAt: Scalars['Int'];
 };
 
+/** The price range and currency of a product */
 export type PriceRange = {
   min?: Maybe<Scalars['String']>;
   max?: Maybe<Scalars['String']>;
   currencyCode?: Maybe<Scalars['String']>;
 };
 
+/** Details for different media types associated with content & products */
 export type Media = {
   id?: Maybe<Scalars['ID']>;
   type: Scalars['String'];
@@ -52,6 +54,7 @@ export type Media = {
   altText?: Maybe<Scalars['String']>;
 };
 
+/** A flexible key / value store that can be associated with many other pieces of Nacelle data */
 export type Metafield = {
   id?: Maybe<Scalars['ID']>;
   namespace?: Maybe<Scalars['String']>;
@@ -59,6 +62,7 @@ export type Metafield = {
   value: Scalars['String'];
 };
 
+/** A product option that differs from the base product */
 export type ProductVariant = {
   id: Scalars['ID'];
   title?: Maybe<Scalars['String']>;
@@ -96,11 +100,13 @@ export type ProductPriceBreaks = {
   metafields?: Maybe<Array<Maybe<Metafield>>>;
 };
 
+/** Available options for a product variant (i.e. color, size, etc) */
 export type SelectedProductOption = {
   name: Scalars['String'];
   value: Scalars['String'];
 };
 
+/** A collection of products that has been indexed by Nacelle */
 export type NacelleCollection = {
   id: Scalars['ID'];
   handle: Scalars['String'];
@@ -118,6 +124,7 @@ export type NacelleCollection = {
   metafields?: Maybe<Array<Metafield>>;
 };
 
+/** A list of products by handle */
 export type NacelleProductList = {
   title: Scalars['String'];
   slug: Scalars['String'];
@@ -125,6 +132,7 @@ export type NacelleProductList = {
   handles?: Maybe<Array<Scalars['String']>>;
 };
 
+/** Content from a CMS that has been indexed by Nacelle */
 export type NacelleContent = {
   id: Scalars['ID'];
   handle: Scalars['String'];
@@ -154,6 +162,7 @@ export type NacelleContent = {
   indexedAt: Scalars['Int'];
 };
 
+/** A list of articles by handle */
 export type ContentArticleList = {
   title: Scalars['String'];
   slug: Scalars['String'];
@@ -161,6 +170,7 @@ export type ContentArticleList = {
   handles?: Maybe<Array<Scalars['String']>>;
 };
 
+/** The author of the content */
 export type ContentAuthor = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
@@ -168,6 +178,7 @@ export type ContentAuthor = {
   email?: Maybe<Scalars['String']>;
 };
 
+/** An article that is related to the current article */
 export type ContentRelatedArticle = {
   handle: Scalars['String'];
   title?: Maybe<Scalars['String']>;
@@ -194,6 +205,7 @@ export type MetafieldInput = {
   value?: Maybe<Scalars['String']>;
 };
 
+/** Information about a processed checkout */
 export type Checkout = {
   id: Scalars['String'];
   url?: Maybe<Scalars['String']>;
@@ -208,6 +220,7 @@ export type Checkout = {
   cartItems?: Maybe<Array<CartItem>>;
 };
 
+/** Information required to process a checkout */
 export type CheckoutInput = {
   cartItems: Array<CartItemInput>;
   checkoutId?: Maybe<Scalars['String']>;
@@ -224,6 +237,7 @@ export type CartItemInput = {
   metafields?: Maybe<Array<MetafieldInput>>;
 };
 
+/** An item that is currently in a cart */
 export type CartItem = {
   cartItemId: Scalars['String'];
   variantId?: Maybe<Scalars['String']>;
@@ -231,6 +245,7 @@ export type CartItem = {
   metafields?: Maybe<Array<Metafield>>;
 };
 
+/** A sapce that has been created in the Nacelle dashboard */
 export type NacelleSpace = {
   id: Scalars['ID'];
   type?: Maybe<Scalars['String']>;
@@ -251,6 +266,7 @@ export type NacelleSpace = {
   featureFlags?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
+/** Configuration settings for retrieving content from a CMS */
 export type ContentDataConfig = {
   dataSource?: Maybe<Scalars['String']>;
   graphqlDataToken?: Maybe<Scalars['String']>;
@@ -259,18 +275,21 @@ export type ContentDataConfig = {
   assetStorage?: Maybe<Scalars['String']>;
 };
 
+/** Configuration settings for retrieving producting information from a PIM */
 export type ProductDataConfig = {
   dataSource?: Maybe<Scalars['String']>;
   graphqlDataToken?: Maybe<Scalars['String']>;
   graphqlEndpoint?: Maybe<Scalars['String']>;
 };
 
+/** A user who has access to a space */
 export type SpaceUser = {
   id: Scalars['ID'];
   email?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
 };
 
+/** Configuration used to process checkouts */
 export type CheckoutDataConfig = {
   dataSource: Scalars['String'];
   graphqlDataToken?: Maybe<Scalars['String']>;
@@ -295,11 +314,13 @@ export type SpaceAffinityLinkList = {
   linklists: Array<SpaceLinkList>;
 };
 
+/** A list of links that can be used to generate pages & routes in a headless app */
 export type SpaceLinkList = {
   handle: Scalars['String'];
   links?: Maybe<Array<Link>>;
 };
 
+/** A link used to generate pages & routes in a headless app */
 export type Link = {
   title: Scalars['String'];
   to: Scalars['String'];
