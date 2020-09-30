@@ -1,0 +1,14 @@
+overwrite: true
+generates:
+  src/graphql.types.ts:
+    schema: './src/type-defs.ts'
+    plugins:
+      - 'typescript'
+    config:
+      maybeValue: T | null | undefined
+      skipTypename: true
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+require:
+  - 'ts-node/register/transpile-only'
