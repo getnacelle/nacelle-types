@@ -22,6 +22,7 @@ export type NacelleProduct = {
   pimSyncSourceDomain: Scalars['String'];
   pimSyncSource?: Maybe<Scalars['String']>;
   pimSyncSourceProductId?: Maybe<Scalars['String']>;
+  pimSyncSourceLocale?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   priceRange?: Maybe<PriceRange>;
@@ -115,6 +116,7 @@ export type NacelleCollection = {
   pimSyncSourceDomain: Scalars['String'];
   pimSyncSource?: Maybe<Scalars['String']>;
   pimSyncSourceCollectionId?: Maybe<Scalars['String']>;
+  pimSyncSourceLocale?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   featuredMedia?: Maybe<Media>;
@@ -149,6 +151,7 @@ export type NacelleContent = {
   cmsSyncSource: Scalars['String'];
   cmsSyncSourceDomain: Scalars['String'];
   cmsSyncSourceContentId?: Maybe<Scalars['String']>;
+  cmsSyncSourceLocale?: Maybe<Scalars['String']>;
   type: Scalars['String'];
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;

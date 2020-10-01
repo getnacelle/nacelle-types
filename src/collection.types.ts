@@ -11,6 +11,7 @@ export interface DatabaseCollection {
   pimSyncSourceDomain: string;
   pimSyncSource?: string;
   pimSyncSourceCollectionId?: string;
+  pimSyncSourceLocale?: string;
   title?: string;
   description?: string;
   featuredMedia?: string;

@@ -17,6 +17,7 @@ export default `#graphql
     pimSyncSourceDomain: String!
     pimSyncSource: String
     pimSyncSourceProductId: String
+    pimSyncSourceLocale: String
     title: String
     description: String
     priceRange: PriceRange
@@ -110,6 +111,7 @@ export default `#graphql
     pimSyncSourceDomain: String!
     pimSyncSource: String
     pimSyncSourceCollectionId: String
+    pimSyncSourceLocale: String
     title: String
     description: String
     featuredMedia: Media
@@ -144,6 +146,7 @@ export default `#graphql
     cmsSyncSource: String!
     cmsSyncSourceDomain: String!
     cmsSyncSourceContentId: String
+    cmsSyncSourceLocale: String
     type: String!
     title: String
     description: String

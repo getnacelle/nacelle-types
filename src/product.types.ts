@@ -11,6 +11,7 @@ export interface DatabaseProduct {
   pimSyncSourceDomain?: string;
   pimSyncSource?: string;
   pimSyncSourceProductId?: string;
+  pimSyncSourceLocale?: string;
   title?: string;
   description?: string;
   priceRange?: string;

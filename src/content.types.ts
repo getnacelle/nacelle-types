@@ -12,6 +12,7 @@ export interface DatabaseContent {
   cmsSyncSourceDomain?: string;
   cmsSyncSource?: string;
   cmsSyncSourceContentId?: string;
+  cmsSyncSourceLocale?: string;
   title?: string;
   description?: string;
   sections?: string;
