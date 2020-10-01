@@ -116,7 +116,15 @@ export default `#graphql
     productLists: [NacelleProductList!]
     createdAt: Int
     updatedAt: Int
-    metafields: [Metafield!]
+    metafields: [NacelleCollectionMetafield!]
+  }
+
+  type NacelleCollectionMetafield {
+    id: ID
+    namespace: String
+    key: String!
+    value: String!
+    source: String
   }
 
   "A list of products by handle"

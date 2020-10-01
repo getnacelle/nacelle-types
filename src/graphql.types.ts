@@ -121,7 +121,15 @@ export type NacelleCollection = {
   productLists?: Maybe<Array<NacelleProductList>>;
   createdAt?: Maybe<Scalars['Int']>;
   updatedAt?: Maybe<Scalars['Int']>;
-  metafields?: Maybe<Array<Metafield>>;
+  metafields?: Maybe<Array<NacelleCollectionMetafield>>;
+};
+
+export type NacelleCollectionMetafield = {
+  id?: Maybe<Scalars['ID']>;
+  namespace?: Maybe<Scalars['String']>;
+  key: Scalars['String'];
+  value: Scalars['String'];
+  source?: Maybe<Scalars['String']>;
 };
 
 /** A list of products by handle */
