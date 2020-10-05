@@ -1,4 +1,4 @@
-import { NacelleProduct, ProductVariant } from './graphql.types';
+import { NacelleProduct, ProductVariant, Media } from './graphql.types';
 
 /**
  * Nacelle product as it is retrieved from the database.
@@ -39,4 +39,17 @@ export interface DatabaseProduct {
 export interface NacelleShopProduct extends NacelleProduct {
   variant?: ProductVariant;
   quantity?: number;
+}
+
+/**
+ * The selected variant of a product when it is in the cart
+ */
+export interface CartItem extends ProductVariant {
+  handle: string;
+  image: Media;
+  productId: string;
+  quantity: number;
+  tags: string[];
+  vendor: string;
+  locale: string;
 }
