@@ -223,12 +223,12 @@ export default `#graphql
     createdAt: Int
     completedAt: Int
     updatedAt: Int
-    cartItems: [CartItem!]
+    cartItems: [CheckoutItem!]
   }
 
   "Information required to process a checkout"
   input CheckoutInput {
-    cartItems: [CartItemInput!]!
+    cartItems: [CheckoutItemInput!]!
     checkoutId: String
     discountCodes: [String!]
     source: String
@@ -236,15 +236,15 @@ export default `#graphql
     note: String
   }
 
-  input CartItemInput {
+  input CheckoutItemInput {
     cartItemId: String!
     variantId: String
     quantity: Int!
     metafields: [MetafieldInput!]
   }
 
-  "An item that is currently in a cart"
-  type CartItem {
+  "Item details required to proecess checkout"
+  type CheckoutItem {
     cartItemId: String!
     variantId: String
     quantity: Int!

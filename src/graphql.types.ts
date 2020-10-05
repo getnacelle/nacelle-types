@@ -228,12 +228,12 @@ export type Checkout = {
   createdAt?: Maybe<Scalars['Int']>;
   completedAt?: Maybe<Scalars['Int']>;
   updatedAt?: Maybe<Scalars['Int']>;
-  cartItems?: Maybe<Array<CartItem>>;
+  cartItems?: Maybe<Array<CheckoutItem>>;
 };
 
 /** Information required to process a checkout */
 export type CheckoutInput = {
-  cartItems: Array<CartItemInput>;
+  cartItems: Array<CheckoutItemInput>;
   checkoutId?: Maybe<Scalars['String']>;
   discountCodes?: Maybe<Array<Scalars['String']>>;
   source?: Maybe<Scalars['String']>;
@@ -241,15 +241,15 @@ export type CheckoutInput = {
   note?: Maybe<Scalars['String']>;
 };
 
-export type CartItemInput = {
+export type CheckoutItemInput = {
   cartItemId: Scalars['String'];
   variantId?: Maybe<Scalars['String']>;
   quantity: Scalars['Int'];
   metafields?: Maybe<Array<MetafieldInput>>;
 };
 
-/** An item that is currently in a cart */
-export type CartItem = {
+/** Item details required to proecess checkout */
+export type CheckoutItem = {
   cartItemId: Scalars['String'];
   variantId?: Maybe<Scalars['String']>;
   quantity: Scalars['Int'];
