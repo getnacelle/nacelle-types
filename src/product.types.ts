@@ -1,3 +1,5 @@
+import { NacelleProduct, ProductVariant } from './graphql.types';
+
 /**
  * Nacelle product as it is retrieved from the database.
  * The primary difference is that many pieces of information are stored
@@ -26,4 +28,15 @@ export interface DatabaseProduct {
   createdAt?: number;
   updatedAt?: number;
   indexedAt?: number;
+}
+
+/**
+ * An alternative to NacelleProduct that includes optional
+ * variant and quantity for use within frontend applications.
+ * It's common to store the currently selected variant on a
+ * modified product, as well as store a selected quantity
+ */
+export interface NacelleShopProduct extends NacelleProduct {
+  variant?: ProductVariant;
+  quantity?: number;
 }
