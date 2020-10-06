@@ -75,6 +75,7 @@ export default `#graphql
     metafields: [Metafield!]
     weight: Float
     weightUnit: String
+    quantityAvailable: Int
   }
 
   type ProductPriceRule {
