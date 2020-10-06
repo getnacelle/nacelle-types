@@ -279,6 +279,17 @@ export type NacelleSpace = {
   featureFlags?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
+export type NacelleShopSpace = {
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  domain?: Maybe<Scalars['String']>;
+  metafields?: Maybe<Array<Metafield>>;
+  linklists?: Maybe<Array<SpaceLinkList>>;
+  affinityLinklists?: Maybe<Array<SpaceAffinityLinkList>>;
+  pimSyncSourceDomain: Scalars['String'];
+  cmsSyncSourceDomain: Scalars['String'];
+};
+
 /** Configuration settings for retrieving content from a CMS */
 export type ContentDataConfig = {
   dataSource?: Maybe<Scalars['String']>;
