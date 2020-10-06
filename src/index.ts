@@ -6,5 +6,6 @@ export * from './content.types';
 export * from './product.types';
 export * from './checkout.types';
 export * from './space.types';
+export * from './user.types';
 
 export { sharedTypeDefs };
