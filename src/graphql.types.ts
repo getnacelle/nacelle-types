@@ -80,6 +80,7 @@ export type ProductVariant = {
   metafields?: Maybe<Array<Metafield>>;
   weight?: Maybe<Scalars['Float']>;
   weightUnit?: Maybe<Scalars['String']>;
+  quantityAvailable?: Maybe<Scalars['Int']>;
 };
 
 export type ProductPriceRule = {
