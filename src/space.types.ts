@@ -29,18 +29,3 @@ export interface DatabaseSpace {
   users: string;
   featureFlags: string;
 }
-
-/**
- * Abbreviated Nacelle space as it is retrieved
- * from the SDK and used in frontend applications
- */
-export interface NacelleShopSpace {
-  id: string;
-  name: string;
-  domain: string;
-  metafields: Metafield[];
-  linklists: SpaceLinkList[];
-  affinityLinklists: SpaceAffinityLinkList[];
-  pimSyncSourceDomain: string;
-  cmsSyncSourceDomain: string;
-}

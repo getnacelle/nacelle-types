@@ -274,6 +274,19 @@ export default `#graphql
     featureFlags: [String]
   }
 
+
+  type NacelleShopSpace {
+    id: ID!
+    type: String
+    name: String
+    domain: String
+    pimSyncSourceDomain: String!
+    cmsSyncSourceDomain: String!
+    linklists: [SpaceLinkList!]
+    affinityLinklists: [SpaceAffinityLinkList!]
+    metafields: [Metafield!]
+  }
+
   "Configuration settings for retrieving content from a CMS"
   type ContentDataConfig {
     dataSource: String
