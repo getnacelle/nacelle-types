@@ -1,4 +1,8 @@
-import { Metafield, SpaceLinkList } from './graphql.types';
+import {
+  Metafield,
+  SpaceLinkList,
+  SpaceAffinityLinkList
+} from './graphql.types';
 
 /**
  * Nacelle space as it is retrieved from the database.
@@ -11,6 +15,7 @@ export interface DatabaseSpace {
   name: string;
   domain: string;
   token: string;
+  publicToken?: string;
   pimSyncSourceDomain: string;
   cmsSyncSourceDomain: string;
   linklists: string;
@@ -23,18 +28,4 @@ export interface DatabaseSpace {
   contentConnectorConfig: string;
   users: string;
   featureFlags: string;
-}
-
-/**
- * Abbreviated Nacelle space as it is retrieved
- * from the SDK and used in frontend applications
- */
-export interface NacelleShopSpace {
-  id: string;
-  name: string;
-  domain: string;
-  metafields: Metafield[];
-  linklists: SpaceLinkList[];
-  pimSyncSourceDomain: string;
-  cmsSyncSourceDomain: string;
 }
