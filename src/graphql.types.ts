@@ -264,7 +264,7 @@ export type NacelleSpace = {
   name?: Maybe<Scalars['String']>;
   domain?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['String']>;
-  readToken?: Maybe<Scalars['String']>;
+  publicToken?: Maybe<Scalars['String']>;
   pimSyncSourceDomain: Scalars['String'];
   cmsSyncSourceDomain: Scalars['String'];
   linklists?: Maybe<Array<SpaceLinkList>>;

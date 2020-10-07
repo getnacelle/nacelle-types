@@ -259,7 +259,7 @@ export default `#graphql
     name: String
     domain: String
     token: String
-    readToken: String
+    publicToken: String
     pimSyncSourceDomain: String!
     cmsSyncSourceDomain: String!
     linklists: [SpaceLinkList!]

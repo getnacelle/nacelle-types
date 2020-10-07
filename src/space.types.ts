@@ -15,7 +15,7 @@ export interface DatabaseSpace {
   name: string;
   domain: string;
   token: string;
-  readToken?: string;
+  publicToken?: string;
   pimSyncSourceDomain: string;
   cmsSyncSourceDomain: string;
   linklists: string;
