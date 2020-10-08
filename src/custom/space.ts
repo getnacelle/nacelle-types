@@ -1,9 +1,3 @@
-import {
-  Metafield,
-  SpaceLinkList,
-  SpaceAffinityLinkList
-} from './graphql.types';
-
 /**
  * Nacelle space as it is retrieved from the database.
  * The primary difference is that many pieces of information are stored

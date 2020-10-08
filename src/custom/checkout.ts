@@ -1,4 +1,4 @@
-import { Metafield } from './graphql.types';
+import { Metafield } from '../graphql/generated';
 
 /**
  * Information needed to process ReCharge checkouts
