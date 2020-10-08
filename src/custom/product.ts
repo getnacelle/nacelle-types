@@ -1,4 +1,4 @@
-import { NacelleProduct, ProductVariant, Media } from './graphql.types';
+import { NacelleProduct, ProductVariant, Media } from '../graphql/generated';
 
 /**
  * Nacelle product as it is retrieved from the database.
