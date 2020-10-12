@@ -208,8 +208,10 @@ export default `#graphql
   }
 
   input MetafieldInput {
+    namespace: String
     key: String
     value: String
+    source: String
   }
 
   "Information about a processed checkout"
@@ -259,6 +261,10 @@ export default `#graphql
     name: String
     domain: String
     token: String
+    buildHook: String
+      @deprecated(
+        reason: "Features for this field were never implemented; it is currently a no-op"
+      )
     publicToken: String
     pimSyncSourceDomain: String!
     cmsSyncSourceDomain: String!
@@ -274,6 +280,19 @@ export default `#graphql
     featureFlags: [String]
   }
 
+  input SpaceInput {
+    id: String!
+    domain: String
+    name: String
+    token: String
+    type: String
+    buildHook: String
+    pimSyncSourceDomain: String
+    cmsSyncSourceDomain: String
+    checkoutDataConfig: CheckoutDataConfigInput
+    productConnectorConfig: ConnectorConfigInput
+    contentConnectorConfig: ConnectorConfigInput
+  }
 
   type NacelleShopSpace {
     id: ID!
@@ -347,5 +366,48 @@ export default `#graphql
     to: String!
     type: String
     links: [Link!]
+  }
+
+  type MerchandisingRule {
+    inputs: [String!]!
+    outputs: [String!]!
+    type: String!
+  }
+
+  input MerchandisingRuleInput {
+    inputs: [String!]!
+    outputs: [String!]!
+    type: String!
+  }
+
+  type NacelleUser {
+    id: String
+    email: String
+    spaces: [UserSpace]
+  }
+
+  type UserSpace {
+    id: String!
+    role: String
+  }
+
+  input ConnectorConfigInput {
+    type: String!
+    autoSync: Boolean
+    graphqlDataToken: String
+    graphqlEndpoint: String
+    restEndpoint: String
+    webhookKey: String
+  }
+
+  input CheckoutDataConfigInput {
+    dataSource: String
+    graphqlDataToken: String
+    graphqlEndpoint: String
+    restEndpoint: String
+    alternativeDataSource: String
+    alternativeDataToken: String
+    alternativeDataRestEndpoint: String
+    shopifyUrl: String
   }
 `;

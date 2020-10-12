@@ -214,8 +214,10 @@ export type OptionalMetafield = {
 };
 
 export type MetafieldInput = {
+  namespace?: Maybe<Scalars['String']>;
   key?: Maybe<Scalars['String']>;
   value?: Maybe<Scalars['String']>;
+  source?: Maybe<Scalars['String']>;
 };
 
 /** Information about a processed checkout */
@@ -265,6 +267,8 @@ export type NacelleSpace = {
   name?: Maybe<Scalars['String']>;
   domain?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['String']>;
+  /** @deprecated Features for this field were never implemented; it is currently a no-op */
+  buildHook?: Maybe<Scalars['String']>;
   publicToken?: Maybe<Scalars['String']>;
   pimSyncSourceDomain: Scalars['String'];
   cmsSyncSourceDomain: Scalars['String'];
@@ -278,6 +282,20 @@ export type NacelleSpace = {
   contentConnectorConfig?: Maybe<ConnectorConfig>;
   users?: Maybe<Array<SpaceUser>>;
   featureFlags?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SpaceInput = {
+  id: Scalars['String'];
+  domain?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  token?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  buildHook?: Maybe<Scalars['String']>;
+  pimSyncSourceDomain?: Maybe<Scalars['String']>;
+  cmsSyncSourceDomain?: Maybe<Scalars['String']>;
+  checkoutDataConfig?: Maybe<CheckoutDataConfigInput>;
+  productConnectorConfig?: Maybe<ConnectorConfigInput>;
+  contentConnectorConfig?: Maybe<ConnectorConfigInput>;
 };
 
 export type NacelleShopSpace = {
@@ -352,4 +370,47 @@ export type Link = {
   to: Scalars['String'];
   type?: Maybe<Scalars['String']>;
   links?: Maybe<Array<Link>>;
+};
+
+export type MerchandisingRule = {
+  inputs: Array<Scalars['String']>;
+  outputs: Array<Scalars['String']>;
+  type: Scalars['String'];
+};
+
+export type MerchandisingRuleInput = {
+  inputs: Array<Scalars['String']>;
+  outputs: Array<Scalars['String']>;
+  type: Scalars['String'];
+};
+
+export type NacelleUser = {
+  id?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  spaces?: Maybe<Array<Maybe<UserSpace>>>;
+};
+
+export type UserSpace = {
+  id: Scalars['String'];
+  role?: Maybe<Scalars['String']>;
+};
+
+export type ConnectorConfigInput = {
+  type: Scalars['String'];
+  autoSync?: Maybe<Scalars['Boolean']>;
+  graphqlDataToken?: Maybe<Scalars['String']>;
+  graphqlEndpoint?: Maybe<Scalars['String']>;
+  restEndpoint?: Maybe<Scalars['String']>;
+  webhookKey?: Maybe<Scalars['String']>;
+};
+
+export type CheckoutDataConfigInput = {
+  dataSource?: Maybe<Scalars['String']>;
+  graphqlDataToken?: Maybe<Scalars['String']>;
+  graphqlEndpoint?: Maybe<Scalars['String']>;
+  restEndpoint?: Maybe<Scalars['String']>;
+  alternativeDataSource?: Maybe<Scalars['String']>;
+  alternativeDataToken?: Maybe<Scalars['String']>;
+  alternativeDataRestEndpoint?: Maybe<Scalars['String']>;
+  shopifyUrl?: Maybe<Scalars['String']>;
 };
