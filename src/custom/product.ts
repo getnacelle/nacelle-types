@@ -45,6 +45,8 @@ export interface NacelleShopProduct extends NacelleProduct {
  * The selected variant of a product when it is in the cart
  */
 export interface CartItem extends ProductVariant {
+  variant: ProductVariant;
+  title: string;
   handle: string;
   image: Media;
   productId: string;
