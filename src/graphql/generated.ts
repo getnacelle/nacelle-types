@@ -271,7 +271,7 @@ export type NacelleSpace = {
   buildHook?: Maybe<Scalars['String']>;
   publicToken?: Maybe<Scalars['String']>;
   pimSyncSourceDomain: Scalars['String'];
-  cmsSyncSourceDomain: Scalars['String'];
+  cmsSyncSourceDomain?: Maybe<Scalars['String']>;
   linklists?: Maybe<Array<SpaceLinkList>>;
   affinityLinklists?: Maybe<Array<SpaceAffinityLinkList>>;
   metafields?: Maybe<Array<Metafield>>;

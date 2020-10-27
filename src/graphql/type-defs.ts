@@ -267,7 +267,7 @@ export default `#graphql
       )
     publicToken: String
     pimSyncSourceDomain: String!
-    cmsSyncSourceDomain: String!
+    cmsSyncSourceDomain: String
     linklists: [SpaceLinkList!]
     affinityLinklists: [SpaceAffinityLinkList!]
     metafields: [Metafield!]
