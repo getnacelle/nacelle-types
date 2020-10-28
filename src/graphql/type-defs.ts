@@ -342,6 +342,7 @@ export default `#graphql
   }
 
   type ConnectorConfig {
+    entryDepth: Int
     type: String!
     graphqlDataToken: String
     graphqlEndpoint: String
@@ -392,6 +393,7 @@ export default `#graphql
   }
 
   input ConnectorConfigInput {
+    entryDepth: Int
     type: String!
     autoSync: Boolean
     graphqlDataToken: String
