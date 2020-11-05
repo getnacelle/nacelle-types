@@ -289,6 +289,7 @@ export type SpaceInput = {
   domain?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['String']>;
+  publicToken?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   buildHook?: Maybe<Scalars['String']>;
   pimSyncSourceDomain?: Maybe<Scalars['String']>;
@@ -346,6 +347,7 @@ export type CheckoutDataConfig = {
 };
 
 export type ConnectorConfig = {
+  entryDepth?: Maybe<Scalars['Int']>;
   type: Scalars['String'];
   graphqlDataToken?: Maybe<Scalars['String']>;
   graphqlEndpoint?: Maybe<Scalars['String']>;
@@ -396,6 +398,7 @@ export type UserSpace = {
 };
 
 export type ConnectorConfigInput = {
+  entryDepth?: Maybe<Scalars['Int']>;
   type: Scalars['String'];
   autoSync?: Maybe<Scalars['Boolean']>;
   graphqlDataToken?: Maybe<Scalars['String']>;

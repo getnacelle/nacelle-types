@@ -285,6 +285,7 @@ export default `#graphql
     domain: String
     name: String
     token: String
+    publicToken: String
     type: String
     buildHook: String
     pimSyncSourceDomain: String
