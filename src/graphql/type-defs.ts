@@ -265,6 +265,7 @@ export default `#graphql
       @deprecated(
         reason: "Features for this field were never implemented; it is currently a no-op"
       )
+    privateToken: String
     publicToken: String
     pimSyncSourceDomain: String!
     cmsSyncSourceDomain: String
@@ -285,6 +286,7 @@ export default `#graphql
     domain: String
     name: String
     token: String
+    privateToken: String
     publicToken: String
     type: String
     buildHook: String

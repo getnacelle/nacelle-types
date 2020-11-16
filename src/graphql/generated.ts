@@ -269,6 +269,7 @@ export type NacelleSpace = {
   token?: Maybe<Scalars['String']>;
   /** @deprecated Features for this field were never implemented; it is currently a no-op */
   buildHook?: Maybe<Scalars['String']>;
+  privateToken?: Maybe<Scalars['String']>;
   publicToken?: Maybe<Scalars['String']>;
   pimSyncSourceDomain: Scalars['String'];
   cmsSyncSourceDomain?: Maybe<Scalars['String']>;
@@ -289,6 +290,7 @@ export type SpaceInput = {
   domain?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['String']>;
+  privateToken?: Maybe<Scalars['String']>;
   publicToken?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   buildHook?: Maybe<Scalars['String']>;
