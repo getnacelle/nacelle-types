@@ -9,6 +9,7 @@ export interface DatabaseSpace {
   name: string;
   domain: string;
   token: string;
+  privateToken?: string;
   publicToken?: string;
   pimSyncSourceDomain: string;
   cmsSyncSourceDomain: string;
