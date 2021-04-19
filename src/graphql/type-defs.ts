@@ -55,7 +55,7 @@ export default `#graphql
     id: ID
     namespace: String
     key: String!
-    value: String!
+    value: String! | Int!
   }
 
   "A product option that differs from the base product"
