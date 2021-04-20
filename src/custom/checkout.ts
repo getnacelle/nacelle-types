@@ -26,7 +26,7 @@ export interface RechargeCheckoutLineItem {
   variant_id: string;
   quantity: number;
   properties: {
-    [prop: string]: string | number;
+    [prop: string]: string;
   };
   charge_interval_frequency?: string;
   order_interval_frequency?: string;
