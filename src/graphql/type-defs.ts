@@ -117,8 +117,8 @@ export default `#graphql
     description: String
     featuredMedia: Media
     productLists: [NacelleProductList!]
-    createdAt: Int
     updatedAt: Int
+    indexedAt: Int!
     metafields: [NacelleCollectionMetafield!]
   }
 
