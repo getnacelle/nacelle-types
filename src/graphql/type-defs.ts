@@ -119,6 +119,7 @@ export default `#graphql
     productLists: [NacelleProductList!]
     createdAt: Int
     updatedAt: Int
+    indexedAt: Int!
     metafields: [NacelleCollectionMetafield!]
   }
 
