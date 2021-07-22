@@ -416,4 +416,9 @@ export default `#graphql
     alternativeDataRestEndpoint: String
     shopifyUrl: String
   }
+
+  type NacelleProductRecommendation {
+    handle: String!
+    source: String
+  }
 `;

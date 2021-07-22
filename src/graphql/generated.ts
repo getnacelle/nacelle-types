@@ -125,6 +125,7 @@ export type NacelleCollection = {
   productLists?: Maybe<Array<NacelleProductList>>;
   createdAt?: Maybe<Scalars['Int']>;
   updatedAt?: Maybe<Scalars['Int']>;
+  indexedAt: Scalars['Int'];
   metafields?: Maybe<Array<NacelleCollectionMetafield>>;
 };
 
@@ -418,4 +419,9 @@ export type CheckoutDataConfigInput = {
   alternativeDataToken?: Maybe<Scalars['String']>;
   alternativeDataRestEndpoint?: Maybe<Scalars['String']>;
   shopifyUrl?: Maybe<Scalars['String']>;
+};
+
+export type NacelleProductRecommendation = {
+  handle: Scalars['String'];
+  source?: Maybe<Scalars['String']>;
 };
