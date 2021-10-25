@@ -209,6 +209,7 @@ export default `#graphql
   }
 
   input MetafieldInput {
+    id: String
     namespace: String
     key: String
     value: String

@@ -215,6 +215,7 @@ export type OptionalMetafield = {
 };
 
 export type MetafieldInput = {
+  id?: Maybe<Scalars['String']>;
   namespace?: Maybe<Scalars['String']>;
   key?: Maybe<Scalars['String']>;
   value?: Maybe<Scalars['String']>;
