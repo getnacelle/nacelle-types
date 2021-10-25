@@ -56,6 +56,7 @@ export default `#graphql
     namespace: String
     key: String!
     value: String!
+    source: String
   }
 
   "A product option that differs from the base product"
