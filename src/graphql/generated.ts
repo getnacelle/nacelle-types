@@ -62,6 +62,7 @@ export type Metafield = {
   namespace?: Maybe<Scalars['String']>;
   key: Scalars['String'];
   value: Scalars['String'];
+  source?: Maybe<Scalars['String']>;
 };
 
 /** A product option that differs from the base product */
@@ -215,6 +216,7 @@ export type OptionalMetafield = {
 };
 
 export type MetafieldInput = {
+  id?: Maybe<Scalars['String']>;
   namespace?: Maybe<Scalars['String']>;
   key?: Maybe<Scalars['String']>;
   value?: Maybe<Scalars['String']>;

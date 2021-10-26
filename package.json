@@ -1,6 +1,6 @@
 {
   "name": "@nacelle/types",
-  "version": "5.0.2",
+  "version": "5.0.4",
   "description": "Typescript & GraphQL types for use when creating Nacelle products",
   "main": "build/index.js",
   "module": "build/index.es.js",
