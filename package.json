@@ -23,7 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "graphql": "^15.3.0",
-    "@graphql-codegen/cli": "^1.17.10",
+    "@graphql-codegen/cli": "^2.13.11",
     "@graphql-codegen/typescript": "^1.17.10",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
